@@ -7,7 +7,7 @@ public class problem {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner (System.in);
 		
-		double qtdcompras, ticketmedio, atrasos, ptscompras=0, ptsinad=0, ptspag=0;
+		double qtdcompras, ticketmedio, atrasos, ptscompras=0, ptsinad=0, ptspag=0, total=0;
 		char modopagamento;
 		
 		// Cabeçalho //
@@ -73,6 +73,22 @@ public class problem {
 			ptspag = 10;
 		}
 		System.out.println("Score de forma de pagamento = " + ptspag + " pontos");
+		
+		//Classificação final//
+		System.out.println("");
+		total = ptscompras + ptsinad + ptspag;
+		if (total <= 25) {
+			System.out.println("Classificação final = CLIENTE BRONZE");
+		}
+		else if (total > 25 && total < 75.1) {
+			System.out.println("Classificação final = CLIENTE PRATA");
+		}
+		if (total > 75) {
+			System.out.println("Classificação final = CLIENTE OURO");
+		}
+		
+		
+		
 		
 		sc.close();
 	}
