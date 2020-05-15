@@ -7,7 +7,7 @@ public class problem {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner (System.in);
 		
-		double qtdcompras, ticketmedio, atrasos;
+		double qtdcompras, ticketmedio, atrasos, ptscompras=0;
 		char modopagamento;
 		
 		// Cabeçalho //
@@ -28,6 +28,33 @@ public class problem {
 		atrasos = sc.nextDouble();
 		System.out.printf("A maioria das compras foi em dinheiro, cartão, ou boleto (D/C/B)?");
 		modopagamento = sc.next().charAt(0);
+		
+		//Score de volume de compras//
+		if (qtdcompras == 0) {
+			ptscompras = 0;
+			System.out.println("");
+			System.out.printf("Score de volume de compras = " + ptscompras);
+		}
+		else if (ticketmedio <= 3000 && qtdcompras <= 2) {
+			ptscompras = 20;
+			System.out.println("");
+			System.out.printf("Score de volume de compras = " + ptscompras);
+		}
+		else if (ticketmedio <= 3000 && qtdcompras > 2) {
+			ptscompras = 40;
+			System.out.println("");
+			System.out.printf("Score de volume de compras = " + ptscompras);
+		}
+		else if (ticketmedio > 3000) {
+			ptscompras = 60;
+			System.out.println("");
+			System.out.printf("Score de volume de compras = " + ptscompras);
+		}
+		else {
+			ptscompras = 0;
+		}
+		
+		
 		
 		sc.close();
 	}
